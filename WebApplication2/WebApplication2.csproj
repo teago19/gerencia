@@ -56,6 +56,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -126,7 +128,10 @@
     </Compile>
     <Compile Include="Models\Entities\Chamado.cs" />
     <Compile Include="Models\Entities\Cliente.cs" />
+    <Compile Include="Models\Entities\Controllers\ControladorChamado.cs" />
     <Compile Include="Models\Entities\Controllers\ControladorCliente.cs" />
+    <Compile Include="Models\Entities\Controllers\ControladorFuncionario.cs" />
+    <Compile Include="Models\Entities\Controllers\ControladorStatus.cs" />
     <Compile Include="Models\Entities\Endereco.cs" />
     <Compile Include="Models\Entities\Funcionario.cs" />
     <Compile Include="Models\Entities\Status.cs" />
