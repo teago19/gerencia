@@ -9,7 +9,7 @@ namespace WebApplication2.Models
 {
     public class Fachada
     {
-        private static Fachada fachada;
+        private static Fachada singleTonfachada;
 
         public FactoryRepositorios factory;
 
@@ -20,16 +20,16 @@ namespace WebApplication2.Models
             this.factory = new FactoryRepositorios();
             this.controladorCliente = new ControladorCliente(this.factory);
         }
-        
-        public static Fachada SingletonFachada
+
+        public static Fachada SingleTonfachada
         {
             get
             {
-                if(fachada == null)
+                if(singleTonfachada == null)
                 {
-                    fachada = new Fachada();
+                    singleTonfachada = new Fachada();
                 }
-                return fachada;
+                return singleTonfachada;
             }
         }
 
@@ -39,6 +39,11 @@ namespace WebApplication2.Models
             this.controladorCliente.cadastrarCliente(novoCliente);
             this.factory.SaveChangesRepositorios();
 
+        }
+        public Cliente BuscarCliente(string cpf)
+        {
+            var temp = this.controladorCliente.buscarCliente(cpf);
+            return temp;
         }
     }
 }

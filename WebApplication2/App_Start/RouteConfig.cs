@@ -13,6 +13,8 @@ namespace WebApplication2
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+
+            routes.MapRoute(name: "Home", url: "", defaults: new { controller = "TelaHome", action = "Index" });
             routes.MapRoute(name: "CadastrarCliente",url: "cliente/novo", defaults: new { controller = "TelaCadastroCliente", action = "CadastrarCliente"});
 
         }

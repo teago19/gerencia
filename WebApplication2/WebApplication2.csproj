@@ -101,6 +101,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Home.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\TelaCadastro.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -124,6 +125,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\TelaCadastroClienteController.cs" />
+    <Compile Include="Controllers\TelaHomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -154,6 +156,7 @@
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\TelaCadastroCliente\CadastrarCliente.cshtml" />
+    <Content Include="Views\TelaHome\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

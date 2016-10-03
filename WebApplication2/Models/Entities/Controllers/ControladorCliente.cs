@@ -21,5 +21,10 @@ namespace WebApplication2.Models.Entities
         {
             this.dbCliente.Add(cliente);
         }
+
+        public Cliente buscarCliente(string cpf)
+        {
+            return this.dbCliente.Where<Cliente>(c => c.cpf == cpf).FirstOrDefault<Cliente>();
+        }
     }
 }
