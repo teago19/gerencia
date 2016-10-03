@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using WebApplication2.Models.IRepositories;
@@ -9,15 +10,16 @@ namespace WebApplication2.Models.Entities
 {
     public class ControladorCliente
     {
-        private RepositorioClienteBDR dbCliente;
+        private DbSet<Cliente> dbCliente;
+
         public ControladorCliente(Factory.FactoryRepositorios factory)
         {
-            this.dbCliente = factory.criarRepositorioCliente();
+            this.dbCliente = factory.GetRepositorioCliente();
         }
 
         public void cadastrarCliente(Cliente cliente)
         {
-            ((IRepositorioCliente)this.dbCliente).add(cliente);
+            this.dbCliente.Add(cliente);
         }
     }
 }

@@ -11,17 +11,15 @@ namespace WebApplication2.Models
     {
         private static Fachada fachada;
 
-        private FactoryRepositorios factory;
+        public FactoryRepositorios factory;
 
         private ControladorCliente controladorCliente;
 
         private Fachada()
         {
             this.factory = new FactoryRepositorios();
-
             this.controladorCliente = new ControladorCliente(this.factory);
         }
-        
         
         public static Fachada SingletonFachada
         {
@@ -33,6 +31,14 @@ namespace WebApplication2.Models
                 }
                 return fachada;
             }
+        }
+
+        public void CadastrarCliente(string cpf,string nome,string password, string telefone, string email,Endereco endereco)
+        {
+            Cliente novoCliente = new Cliente(cpf, password, nome, telefone, email, endereco);
+            this.controladorCliente.cadastrarCliente(novoCliente);
+            this.factory.SaveChangesRepositorios();
+
         }
     }
 }
