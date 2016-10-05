@@ -23,5 +23,6 @@ namespace WebApplication2.Models
             this.cep = cep;
             this.complemento = complemento;
         }
+        public Endereco(){ }
     }
 }

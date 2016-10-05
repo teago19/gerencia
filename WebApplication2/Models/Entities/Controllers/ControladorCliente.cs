@@ -20,11 +20,18 @@ namespace WebApplication2.Models.Entities
         public void cadastrarCliente(Cliente cliente)
         {
             this.dbCliente.Add(cliente);
+            Fachada.SingleTonfachada.factory.SaveChangesRepositorios();
         }
 
-        public Cliente buscarCliente(string cpf)
+        public Cliente buscarCliente(int id)
         {
-            return this.dbCliente.Where<Cliente>(c => c.cpf == cpf).FirstOrDefault<Cliente>();
+            return this.dbCliente.Find(id);
+        }
+
+        public int EfetuarLogin(string cpf, string password)
+        {
+            int temp = this.dbCliente.Where<Cliente>(c => c.cpf == cpf && c.password == password).FirstOrDefault<Cliente>().clienteId;
+            return temp;
         }
     }
 }

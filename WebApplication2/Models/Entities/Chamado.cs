@@ -10,23 +10,23 @@ namespace WebApplication2.Models.Entities
     public class Chamado
     {
         [Key]
-        public int id { get; set; }
+        public int chamadoId { get; set; }
         public string descricao { get; set; }
         public double preco { get; set; }
-        [DataType(DataType.DateTime)]
-        public DateTime dataCriacao { get; set; }
-        [DataType(DataType.DateTime)]
-        public DateTime dataFechamento { get; set; }
+      //  [Column(TypeName = "DateTime2")]
+      //  public DateTime dataCriacao { get; set; }
+      //  [Column(TypeName = "DateTime2")]
+      //  public DateTime dataFechamento { get; set; }
         public Boolean urgencia { get; set; }
         public StatusChamado statusChamado { get; set; }
 
-        public int clienteID { get; set; }
-        [ForeignKey("clienteID")]
+        public int clienteId { get; set; }
+        [ForeignKey("clienteId")]
         public virtual Cliente cliente { get; set; }
 
-        public int funcionarioID { get; set; }
-        [ForeignKey("funcionarioID")]
-        public virtual Funcionario funcionario { get; set; }
+        //public int funcionarioId { get; set; }
+        //[ForeignKey("funcionarioId")]
+        //public virtual Funcionario funcionario { get; set; }
 
         public virtual ICollection<Status> listaStatus { get; set; }
 
@@ -34,13 +34,22 @@ namespace WebApplication2.Models.Entities
         {
             this.descricao = descricao;
             this.preco = preco;
-            this.dataCriacao = dataCriacao;
-            this.dataFechamento = dataFechamento;
+          //  this.dataCriacao = dataCriacao;
+           // this.dataFechamento = dataFechamento;
             this.urgencia = urgencia;
             this.statusChamado = statusChamado;
-            this.clienteID = clienteID;
-            this.funcionarioID = funcionarioID;
+            this.clienteId = clienteID;
+            //this.funcionarioId = funcionarioID;
         }
+        public Chamado(Cliente cliente,string descricao)
+        {
+            this.descricao = descricao;
+            this.preco = -1;
+            //this.dataCriacao = DateTime.Now;
+            this.statusChamado = StatusChamado.Criado;
+            this.clienteId = cliente.clienteId;
+        }
+        public Chamado() { }
 
 
     }

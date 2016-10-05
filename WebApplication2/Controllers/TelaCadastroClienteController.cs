@@ -25,7 +25,7 @@ namespace WebApplication2.Controllers
             {
                 Fachada.SingleTonfachada.CadastrarCliente(cpf, nome, password, telefone, email, new Endereco("c", 3, "c", "c", "3", "3"));
 
-                return RedirectToRoute("");
+                return RedirectToActionPermanent("Login", "TelaLogin");
             }
             catch
             {

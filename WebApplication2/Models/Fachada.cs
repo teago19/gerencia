@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using WebApplication2.Models.Entities;
+using WebApplication2.Models.Entities.Controllers;
 using WebApplication2.Models.Factory;
 
 namespace WebApplication2.Models
@@ -15,10 +16,13 @@ namespace WebApplication2.Models
 
         private ControladorCliente controladorCliente;
 
+        private ControladorChamado controladorChamado;
+
         private Fachada()
         {
             this.factory = new FactoryRepositorios();
             this.controladorCliente = new ControladorCliente(this.factory);
+            this.controladorChamado = new ControladorChamado(this.factory);
         }
 
         public static Fachada SingleTonfachada
@@ -35,15 +39,23 @@ namespace WebApplication2.Models
 
         public void CadastrarCliente(string cpf,string nome,string password, string telefone, string email,Endereco endereco)
         {
-            Cliente novoCliente = new Cliente(cpf, password, nome, telefone, email, endereco);
-            this.controladorCliente.cadastrarCliente(novoCliente);
-            this.factory.SaveChangesRepositorios();
+            this.controladorCliente.cadastrarCliente(new Cliente(cpf, password, nome, telefone, email, endereco));
 
         }
-        public Cliente BuscarCliente(string cpf)
+        public Cliente BuscarCliente(int id)
         {
-            var temp = this.controladorCliente.buscarCliente(cpf);
-            return temp;
+            return this.controladorCliente.buscarCliente(id);
+        }
+
+        public int EfetuarLogin(string cpf,string password)
+        {
+            return this.controladorCliente.EfetuarLogin(cpf, password);
+        }
+
+        public void novoChamado(int id,string descricao)
+        {
+            Cliente cliente = BuscarCliente(id);
+            this.controladorChamado.novoChamado(cliente,descricao);
         }
     }
 }

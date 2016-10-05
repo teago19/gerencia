@@ -9,7 +9,7 @@ namespace WebApplication2.Models.Entities
     public class Cliente
     {
         [Key]
-        public int id { get; set; }
+        public int clienteId { get; set; }
         public string cpf { get; set; }
         public string password { get; set; }
         public string nome { get; set; }
@@ -27,8 +27,9 @@ namespace WebApplication2.Models.Entities
             this.telefone = telefone;
             this.email = email;
             this.endereco = endereco;
-
         }
+        public Cliente(string cpf,string password, string nome, string telefone, string email) : this(cpf,password,nome,telefone,email,new Endereco()) { }
+        public Cliente() { }
 
     }
 }

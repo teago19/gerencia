@@ -28,10 +28,10 @@ c:\users\thiago\documents\visual studio 2015\Projects\WebApplication2\WebApplica
 c:\users\thiago\documents\visual studio 2015\Projects\WebApplication2\WebApplication2\bin\System.Web.Webpages.Razor.xml
 c:\users\thiago\documents\visual studio 2015\Projects\WebApplication2\WebApplication2\bin\System.Web.Helpers.xml
 c:\users\thiago\documents\visual studio 2015\Projects\WebApplication2\WebApplication2\bin\System.Web.Mvc.xml
-c:\users\thiago\documents\visual studio 2015\Projects\WebApplication2\WebApplication2\obj\Debug\WebApplication2.csprojResolveAssemblyReference.cache
 c:\users\thiago\documents\visual studio 2015\Projects\WebApplication2\WebApplication2\obj\Debug\WebApplication2.dll
 c:\users\thiago\documents\visual studio 2015\Projects\WebApplication2\WebApplication2\obj\Debug\WebApplication2.pdb
 c:\users\thiago\documents\visual studio 2015\Projects\WebApplication2\WebApplication2\bin\EntityFramework.dll
 c:\users\thiago\documents\visual studio 2015\Projects\WebApplication2\WebApplication2\bin\EntityFramework.SqlServer.dll
 c:\users\thiago\documents\visual studio 2015\Projects\WebApplication2\WebApplication2\bin\EntityFramework.xml
 c:\users\thiago\documents\visual studio 2015\Projects\WebApplication2\WebApplication2\bin\EntityFramework.SqlServer.xml
+C:\Users\Thiago\documents\visual studio 2015\Projects\WebApplication2\WebApplication2\obj\Debug\WebApplication2.csprojResolveAssemblyReference.cache

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Configuration;
@@ -10,6 +11,9 @@ namespace WebApplication2.Models.IRepositories
 {
     public interface IRepositorioCliente
     {
-        void add(Cliente cliente);
+        void adicionarCliente(Cliente cliente);
+        Boolean existeCliente(Cliente cliente);
+        Boolean validarLogin(string cpf, string password);
+        Cliente buscarCliente(string cpf);
     }
 }
